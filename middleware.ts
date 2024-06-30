@@ -3,7 +3,7 @@ import {authMiddleware} from "@/middlewares/api/authMiddleware";
 import {logMiddleware} from "@/middlewares/api/logMiddleware";
 
 export const config = {
-    matcher: "/api/:path"
+    matcher: "/api/:path*"
 }
 export default function middleware(req: Request) {
     if (req.url.includes('/api/blogs')) {
