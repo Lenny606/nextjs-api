@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_URI : any = process.env.MONGODB_URI;
 
 const connect = async () => {
     const connectionState = mongoose.connection.readyState;
@@ -16,7 +16,7 @@ const connect = async () => {
 
     try {
         mongoose.connect(MONGODB_URI, {
-            dbname: 'next-js-api',
+            dbName: 'next-js-api',
             bufferCommands: true
         })
         console.log('Connected')

@@ -41,7 +41,7 @@ export const PATCH = async (request: Request, context: { params: any }) => {
         await updatedCategory.save();
 
         return new NextResponse(JSON.stringify(updatedCategory), {status: 200})
-    } catch (err) {
+    } catch (err: any) {
         return new NextResponse(JSON.stringify({message: 'Error in updating categories ' + err.message,}), {status: 500});
     }
 }
