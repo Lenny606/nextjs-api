@@ -1,7 +1,6 @@
 import {NextResponse} from "next/server";
 import connect from "@/lib/db";
 import User from "@/lib/models/users";
-import {Types} from 'mongoose';
 
 //object for DB
 const ObjectId = require("mongoose").Types.ObjectId
@@ -16,7 +15,7 @@ export const GET = async () => {
     }
 
 };
-export const POST = async (req: Request, res: Response) => {
+export const POST = async (req: Request) => {
     try {
         const body = await req.json();
         await connect()
@@ -33,7 +32,7 @@ export const POST = async (req: Request, res: Response) => {
         return new NextResponse('Error in creating users ' + err.message, {status: 500});
     }
 }
-export const PATCH = async (req: Request, res: Response) => {
+export const PATCH = async (req: Request) => {
     try {
         const body = await req.json();
         const {userId, userNameUpdated} = body
