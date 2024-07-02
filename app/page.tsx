@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react';
 import Link from "next/link";
-import Header from "@/app/header";
+import Header from "@/components/header";
 
 export default function Home() {
     const url = `https://dummyjson.com/products?limit=10`;
